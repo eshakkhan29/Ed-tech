@@ -8,7 +8,7 @@ import html from '../images/course/html.jpg';
 const Courses = () => {
     return (
         <div className='lg:w-8/12 mx-auto'>
-            <h1 className='text-4xl font-bold my-5 text-center'>Our Courses</h1>
+            <h1 className='text-5xl font-bold my-10 text-center text-secondary'>Our Courses</h1>
 
             <div className='flex lg:flex-row flex-col items-center justify-between lg:gap-8'>
                 <div className='lg:w-1/2'>

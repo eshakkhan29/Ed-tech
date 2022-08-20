@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 import Loading from '../components/Loading';
+import Footer from '../components/Footer';
+import { toast } from 'react-toastify';
 
 const SignUp = () => {
     const [signInWithGoogle, Guser, Gloading, Gerror] = useSignInWithGoogle(auth);
@@ -13,6 +15,7 @@ const SignUp = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    const navigate = useNavigate();
 
     const [customerror, setCustomError] = useState('');
 
@@ -25,31 +28,26 @@ const SignUp = () => {
             createUserWithEmailAndPassword(email, password)
             e.target.reset();
         }
-        else{
+        else {
             setCustomError("password not match")
         }
 
     }
-    if (loading) {
-        return <Loading/>
+    if (loading || Gloading) {
+        return <Loading />
     }
-
-
-
-
-
-
-
-
-
-
-
+    if (user || Guser) {
+        navigate('/')
+    }
+    if (Gerror || error) {
+        toast.error(`${Gerror ? Gerror.message : ''} ${error ? error.message : ''}`);
+    }
     return (
         <div>
             <Header />
-            <div className='lg:w-8/12 mx-auto h-[91vh] flex items-center justify-center'>
+            <div className='lg:w-8/12 mx-auto py-10 flex items-center justify-center'>
                 <div className='lg:w-5/12 bg-transparent py-5 px-8 rounded-xl shadow-lg'>
-                    <h1 className='text-3xl font-bold mb-4'>Sign Up</h1>
+                    <h1 className='text-3xl font-bold mb-4 text-secondary'>Sign Up</h1>
                     <hr className='border-gray-300 mb-5' />
                     <form onSubmit={handelForm}>
                         <input
@@ -70,7 +68,7 @@ const SignUp = () => {
                             type="password"
                             name="rePassword"
                             required />
-                            <p className='my-3 text-warning'>{customerror}</p>
+                        <p className='my-3 text-warning'>{customerror}</p>
                         <input
                             className='btn btn-primary mt-3 w-full'
                             type="submit"
@@ -89,6 +87,7 @@ const SignUp = () => {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 };

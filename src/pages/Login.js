@@ -1,9 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 import Loading from '../components/Loading';
+import Footer from '../components/Footer';
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const [signInWithGoogle, Guser, Gloading, Gerror] = useSignInWithGoogle(auth);
@@ -13,6 +15,9 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
 
 
     const handelForm = (e) => {
@@ -22,24 +27,21 @@ const Login = () => {
         signInWithEmailAndPassword(email, password)
 
     }
-    if (loading) {
-        return <Loading/>
+    if (loading || Gloading) {
+        return <Loading />
     }
-
-
-
-
-
-
-
-
-
+    if (Guser || user) {
+        navigate(from, { replace: true })
+    }
+    if (Gerror || error) {
+        toast.error(`${Gerror ? Gerror.message : ''} ${error ? error.message : ''}`);
+    }
     return (
         <div>
             <Header />
-            <div className='lg:w-8/12 mx-auto h-[91vh] flex items-center justify-center'>
-                <div className='lg:w-5/12 bg-transparent py-5 px-8 rounded-xl shadow-lg'>
-                    <h1 className='text-3xl font-bold mb-4'>Log in</h1>
+            <div className='lg:w-8/12 mx-auto py-20 flex items-center justify-center'>
+                <div className='lg:w-5/12 bg-white py-5 px-8 rounded-xl shadow-lg'>
+                    <h1 className='text-3xl font-bold mb-4 text-secondary'>Log In</h1>
                     <hr className='border-gray-300 mb-5' />
                     <form onSubmit={handelForm}>
                         <input
@@ -73,6 +75,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };

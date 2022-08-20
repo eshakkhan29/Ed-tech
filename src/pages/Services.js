@@ -1,20 +1,16 @@
 import React from 'react';
-import Banner from '../components/Banner';
-import ContactUs from '../components/ContactUs';
 import Courses from '../components/Courses';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 
-const Home = () => {
+const Services = () => {
     return (
         <div>
-            <Header />
-            <Banner />
-            <Courses />
-            <ContactUs/>
+            <Header/>
+            <Courses/>
             <Footer/>
         </div>
     );
 };
 
-export default Home;
+export default Services;

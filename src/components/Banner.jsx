@@ -1,26 +1,52 @@
 import React from 'react';
-import banner from '../images/banner-bg.jpg';
+import banner2 from '../images/banner.jpg';
+import CountUp from 'react-countup';
 
 const Banner = () => {
     return (
-        <div className='py-3'>
-            <img className='lg:h-[700px] w-full h-96  object-cover' src={banner} alt="banner" />
+        <div className='pb-3 relative -z-10'>
+            <img className='lg:h-[720px] w-full h-96  object-cover' src={banner2} alt="banner" />
+            <div className='lg:absolute lg:w-8/12 mx-auto top-[25%] left-1/2 -translate-x-1/2'>
+                <h1 className='text-5xl font-bold text-center text-secondary'>Hard-working part-timers <br /> until the next day</h1>
+                <p className='text-xl text-white lg:w-8/12 mx-auto mt-5 text-center'>JavaScript is among the most powerful and flexible programming languages of the web. It powers the dynamic behavior on most websites, including this one.</p>
+                <div className='text-center mt-10'>
+                    <button className='btn btn-lg text-white btn-secondary'>get started</button>
+                </div>
+            </div>
             <div className='bg-primary shadow-md relative top-[-20px] lg:top-[-30px] rounded-[25px] w-10/12 lg:w-7/12 mx-auto px-5 py-10'>
                 <div className='flex flex-col lg:flex-row items-center justify-between lg:gap-0 gap-10'>
                     <div className='text-center'>
-                        <h1 className='text-5xl font-bold text-secondary'>2500 +</h1>
+                        <h1 className='text-5xl font-bold text-secondary'>
+                        <CountUp
+                            end={2500}
+                            duration={4}
+                        />+
+                        </h1>
                         <p className='text-xl font-semibold mt-2 text-white'>Students</p>
                     </div>
                     <div className='text-center'>
-                        <h1 className='text-5xl font-bold text-secondary'>40 +</h1>
+                        <h1 className='text-5xl font-bold text-secondary'>
+                        <CountUp
+                            end={40}
+                            duration={4}
+                        />+
+                        </h1>
                         <p className='text-xl font-semibold mt-2 text-white'>Real Project</p>
                     </div>
                     <div className='text-center'>
-                        <h1 className='text-5xl font-bold text-secondary'>80</h1>
+                        <h1 className='text-5xl font-bold text-secondary'>
+                        <CountUp
+                            end={80}
+                            duration={4}
+                        />+
+                        </h1>
                         <p className='text-xl font-semibold mt-2 text-white'>Trainer/Teacher</p>
                     </div>
                     <div className='text-center'>
-                        <h1 className='text-5xl font-bold text-secondary'>5 +</h1>
+                        <h1 className='text-5xl font-bold text-secondary'><CountUp
+                            end={5}
+                            duration={4}
+                        /></h1>
                         <p className='text-xl font-semibold mt-2 text-white'>Total Branches</p>
                     </div>
                 </div>
