@@ -39,8 +39,8 @@ const Login = () => {
     return (
         <div>
             <Header />
-            <div className='lg:w-8/12 mx-auto py-20 flex items-center justify-center'>
-                <div className='lg:w-5/12 bg-white py-5 px-8 rounded-xl shadow-lg'>
+            <div className='lg:w-8/12 lg:px-0 px-2  mx-auto py-20 flex items-center justify-center'>
+                <div className='lg:w-5/12 w-11/12  bg-white py-5 lg:px-8 px-4 rounded-xl shadow-lg'>
                     <h1 className='text-3xl font-bold mb-4 text-secondary'>Log In</h1>
                     <hr className='border-gray-300 mb-5' />
                     <form onSubmit={handelForm}>
@@ -62,16 +62,16 @@ const Login = () => {
                             value="Log in" />
                     </form>
                     <div>
-                        <div className='flex items-center justify-between mt-4'>
+                        <div className='flex lg:flex-row flex-col gap-3 items-center justify-between mt-4'>
                             <p className='text-xl font-medium  text-blue-500 cursor-pointer underline'>Forget Password?</p>
                             <p className='text-xl font-medium'>New to <Link to='/signup' className='text-blue-500 underline cursor-pointer'>Sign Up</Link></p>
                         </div>
                     </div>
                     <div class="divider my-7">OR</div>
-                    <div className='flex items-center justify-between'>
-                        <button onClick={() => signInWithGoogle()} className='py-2 px-8 text-xl bg-red-500 text-white font-semibold rounded-[10px]'>Google</button>
-                        <button className='py-2 px-8 text-xl bg-gray-600 text-white font-semibold rounded-[10px]'>Github</button>
-                        <button className='py-2 px-8 text-xl bg-blue-500 text-white font-semibold rounded-[10px]'>facebook</button>
+                    <div className='flex flex-col lg:flex-row items-center justify-between gap-3'>
+                        <button onClick={() => signInWithGoogle()} className='py-2 text-xl w-full bg-red-500 text-white font-semibold rounded-[10px]'>Google</button>
+                        <button className='py-2 text-xl w-full bg-gray-600 text-white font-semibold rounded-[10px]'>Github</button>
+                        <button className='py-2 text-xl w-full bg-blue-500 text-white font-semibold rounded-[10px]'>facebook</button>
                     </div>
                 </div>
             </div>
