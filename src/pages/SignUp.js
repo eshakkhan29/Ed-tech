@@ -87,7 +87,7 @@ const SignUp = () => {
                     </div>
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </div>
     );
 };

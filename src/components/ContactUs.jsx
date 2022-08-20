@@ -3,10 +3,20 @@ import contact from '../images/contact.jpg';
 const ContactUs = () => {
     return (
         <div>
-            <h1 className='text-5xl font-bold my-10 text-center text-secondary'>Contact Us</h1>
+            <h1
+                data-aos="fade-right"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in"
+                className='text-5xl font-bold my-10 text-center text-secondary'>Contact Us</h1>
             <div className='lg:w-8/12 mx-auto pb-20'>
                 <div className='flex lg:flex-row flex-col-reverse items-center justify-between lg:gap-8 gap-5'>
-                    <div className='lg:w-1/2 w-full lg:px-0 px-4'>
+                    <div
+                        data-aos="fade-up"
+                        data-aos-anchor-placement="top-center"
+                        data-aos-duration="800"
+                        data-aos-easing="ease-in"
+                        data-aos-delay="500"
+                        className='lg:w-1/2 w-full lg:px-0 px-4'>
                         <form action="https://formspree.io/f/xjvlzwpl"
                             method="POST">
                             <span className="font-bold">Full name</span>
@@ -35,7 +45,12 @@ const ContactUs = () => {
                             <button type="submit" className="btn lg:w-40 w-full mx-auto btn-primary">Sent Message</button>
                         </form>
                     </div>
-                    <div className='lg:w-1/2'>
+                    <div
+                        data-aos="fade-up"
+                        data-aos-anchor-placement="top-center"
+                        data-aos-duration="1000"
+                        data-aos-easing="ease-in"
+                        className='lg:w-1/2'>
                         <img src={contact} alt="" />
                     </div>
                 </div>

@@ -8,7 +8,7 @@ import auth from '../firebase.init';
 const Header = () => {
     const [user] = useAuthState(auth);
     return (
-        <div className='bg-white w-full sticky top-0 shadow-md shadow-primary'>
+        <div className='bg-white w-full sticky z-50 top-0 shadow-md shadow-primary'>
             <div className='lg:w-8/12 mx-auto'>
                 <div class="navbar">
                     <div class="navbar-start">
