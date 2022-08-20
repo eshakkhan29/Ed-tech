@@ -4,9 +4,9 @@ const ContactUs = () => {
     return (
         <div>
             <h1 className='text-5xl font-bold my-10 text-center text-secondary'>Contact Us</h1>
-            <div className='lg:w-8/12 mx-auto py-20'>
-                <div className='flex lg:flex-row flex-col items-center justify-between lg:gap-8'>
-                    <div className='lg:w-1/2'>
+            <div className='lg:w-8/12 mx-auto pb-20'>
+                <div className='flex lg:flex-row flex-col items-center justify-between lg:gap-8 gap-5'>
+                    <div className='lg:w-1/2 w-full lg:px-0 px-4'>
                         <form action="https://formspree.io/f/xjvlzwpl"
                             method="POST">
                             <span className="font-bold">Full name</span>
@@ -32,7 +32,7 @@ const ContactUs = () => {
                                 name="message"
                                 required />
 
-                            <button type="submit" className="btn w-40 mx-auto btn-primary">Sent Message</button>
+                            <button type="submit" className="btn lg:w-40 w-full mx-auto btn-primary">Sent Message</button>
                         </form>
                     </div>
                     <div className='lg:w-1/2'>
