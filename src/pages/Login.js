@@ -4,21 +4,21 @@ import Header from '../components/Header';
 
 const Login = () => {
     return (
-        <div className='bg-gray-200'>
+        <div>
             <Header />
-            <div className='lg:w-8/12 mx-auto h-[90vh] flex items-center justify-center'>
+            <div className='lg:w-8/12 mx-auto h-[91vh] flex items-center justify-center'>
                 <div className='lg:w-5/12 bg-transparent py-5 px-8 rounded-xl shadow-lg'>
                     <h1 className='text-3xl font-bold mb-4'>Log in</h1>
                     <hr className='border-gray-300 mb-5' />
                     <form>
                         <input
-                            className=" placeholder:text-slate-500 block bg-white w-full border border-gray-400 rounded-md py-3 pl-9 pr-3 shadow-sm focus:outline-none focus:border-blue-600"
+                            className=" placeholder:text-slate-500 block bg-white w-full border border-gray-400 rounded-md py-3 pl-9 pr-3 shadow-sm focus:outline-none focus:border-primary"
                             placeholder="Email"
                             type="email"
                             name="email"
                             required />
                         <input
-                            className="mt-4  placeholder:text-slate-500 block bg-white w-full border border-gray-400 rounded-md py-3 pl-9 pr-3 shadow-sm focus:outline-none focus:border-blue-600"
+                            className="mt-4  placeholder:text-slate-500 block bg-white w-full border border-gray-400 rounded-md py-3 pl-9 pr-3 shadow-sm focus:outline-none focus:border-primary"
                             placeholder="Password"
                             type="password"
                             name="password"
