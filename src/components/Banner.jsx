@@ -1,6 +1,10 @@
 import React from 'react';
 import banner2 from '../images/banner.jpg';
 import CountUp from 'react-countup';
+import { IoIosPeople } from 'react-icons/io';
+import { AiOutlineFundProjectionScreen } from 'react-icons/ai';
+import { MdOutlineTipsAndUpdates } from 'react-icons/md';
+import { RiBuildingLine } from 'react-icons/ri';
 
 const Banner = () => {
     return (
@@ -16,6 +20,7 @@ const Banner = () => {
             <div className='bg-primary mt-5 lg:mt-0 shadow-md lg:relative lg:top-[-30px] rounded-[25px] w-11/12 lg:w-7/12 mx-auto px-5 py-10'>
                 <div className='flex flex-col lg:flex-row items-center justify-between lg:gap-0 gap-10'>
                     <div className='text-center'>
+                        <IoIosPeople className='text-6xl mx-auto font-bold text-secondary'/>
                         <h1 className='text-5xl font-bold text-secondary'>
                         <CountUp
                             end={2500}
@@ -25,6 +30,7 @@ const Banner = () => {
                         <p className='text-xl font-semibold mt-2 text-white'>Students</p>
                     </div>
                     <div className='text-center'>
+                    <AiOutlineFundProjectionScreen className='text-6xl mx-auto font-bold text-secondary'/>
                         <h1 className='text-5xl font-bold text-secondary'>
                         <CountUp
                             end={40}
@@ -34,6 +40,7 @@ const Banner = () => {
                         <p className='text-xl font-semibold mt-2 text-white'>Real Project</p>
                     </div>
                     <div className='text-center'>
+                    <MdOutlineTipsAndUpdates className='text-6xl mx-auto font-bold text-secondary'/>
                         <h1 className='text-5xl font-bold text-secondary'>
                         <CountUp
                             end={80}
@@ -43,6 +50,7 @@ const Banner = () => {
                         <p className='text-xl font-semibold mt-2 text-white'>Trainer/Teacher</p>
                     </div>
                     <div className='text-center'>
+                    <RiBuildingLine className='text-6xl mx-auto font-bold text-secondary'/>
                         <h1 className='text-5xl font-bold text-secondary'><CountUp
                             end={5}
                             duration={4}

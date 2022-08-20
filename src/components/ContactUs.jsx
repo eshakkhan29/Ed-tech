@@ -5,7 +5,7 @@ const ContactUs = () => {
         <div>
             <h1 className='text-5xl font-bold my-10 text-center text-secondary'>Contact Us</h1>
             <div className='lg:w-8/12 mx-auto pb-20'>
-                <div className='flex lg:flex-row flex-col items-center justify-between lg:gap-8 gap-5'>
+                <div className='flex lg:flex-row flex-col-reverse items-center justify-between lg:gap-8 gap-5'>
                     <div className='lg:w-1/2 w-full lg:px-0 px-4'>
                         <form action="https://formspree.io/f/xjvlzwpl"
                             method="POST">

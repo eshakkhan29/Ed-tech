@@ -1,6 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { MdOutlineLogout } from 'react-icons/md';
 import { Link, NavLink } from 'react-router-dom';
 import auth from '../firebase.init';
 
@@ -35,8 +36,9 @@ const Header = () => {
                     <div class="navbar-end">
                         {user?.uid ?
                             <>
-                                <button onClick={() => signOut(auth)} className='btn bg-red-500 outline-none border-none text-white hover:bg-red-700'>LOg Out</button>
+                                <button onClick={() => signOut(auth)} className='font-semibold text-xl text-red-500 hover:text-red-700'><MdOutlineLogout className='inline-block' />Log out</button>
                                 <img className='h-[40px] w-[40px] rounded-full ml-3' src={user?.photoURL} alt="user" />
+                                <span className='text-lg text-primary font-medium ml-3'>{user?.displayName}</span>
                             </>
                             : <NavLink className='btn btn-primary' to='/login'>Log in</NavLink>}
                     </div>
