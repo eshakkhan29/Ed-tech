@@ -1,8 +1,39 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import auth from '../firebase.init';
+import Loading from '../components/Loading';
 
 const Login = () => {
+    const [signInWithGoogle, Guser, Gloading, Gerror] = useSignInWithGoogle(auth);
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
+
+    const handelForm = (e) => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        signInWithEmailAndPassword(email, password)
+
+    }
+    if (loading) {
+        return <Loading/>
+    }
+
+
+
+
+
+
+
+
+
     return (
         <div>
             <Header />
@@ -10,7 +41,7 @@ const Login = () => {
                 <div className='lg:w-5/12 bg-transparent py-5 px-8 rounded-xl shadow-lg'>
                     <h1 className='text-3xl font-bold mb-4'>Log in</h1>
                     <hr className='border-gray-300 mb-5' />
-                    <form>
+                    <form onSubmit={handelForm}>
                         <input
                             className=" placeholder:text-slate-500 block bg-white w-full border border-gray-400 rounded-md py-3 pl-9 pr-3 shadow-sm focus:outline-none focus:border-primary"
                             placeholder="Email"
@@ -36,7 +67,7 @@ const Login = () => {
                     </div>
                     <div class="divider my-7">OR</div>
                     <div className='flex items-center justify-between'>
-                        <button className='py-2 px-8 text-xl bg-red-500 text-white font-semibold rounded-[10px]'>Google</button>
+                        <button onClick={() => signInWithGoogle()} className='py-2 px-8 text-xl bg-red-500 text-white font-semibold rounded-[10px]'>Google</button>
                         <button className='py-2 px-8 text-xl bg-gray-600 text-white font-semibold rounded-[10px]'>Github</button>
                         <button className='py-2 px-8 text-xl bg-blue-500 text-white font-semibold rounded-[10px]'>facebook</button>
                     </div>
